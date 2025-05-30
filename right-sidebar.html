@@ -86,23 +86,28 @@
 									<section>
 										<header>
 											<h3>Testing the PCB</h3>
+											<a href="#" class="image featured"><img src="images/testing.jpg" alt="" /></a>
 										</header>
 										<p>
-											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-											at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+											After having my PCB manufactured I ran a series of tests to check its functionality which involved checking the right voltages through the 
+											chosen testpads in my design, generating wavefunctions through the signal generator and then seeing its amplitude
+											before and after the in-amp for different potentiometer settings. Through my testing I found out that only 2 out of 3 
+											of the circuits worked functionally.  
 										</p>
 										<p>
-											Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-											orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-											ut penatibus fermentum nibh erat malesuada varius.
+											The reason for this was that because of the custom in-amp design which I had, one of the parts involved in it did not have 
+											a proper design on Altium. This did not allow that circuit to be pwoered, causing an entire row of circuit to be lost. This 
+											was circumnavigated by replacing that part and recreating the trace via actual wires to bypass that component. However, this 
+											issue took a while to figure out and taught me that for next PCB design not ony should I check parts more in detail before
+											sending out the PDB for manufacturing but also add LEDs to each circuit which would give a visual indication of whether
+											a circuit is being properly powered or not. I also learnt of TVS diodes and their importance for ESD. 
 										</p>
 									</section>
 									<section>
 										<header>
-											<h3>Modular Firmware code project</h3>
+											<p>
+											Modular bare metal firmware driver project 
+											</p>
 										</header>
 										<a href="#" class="image featured"><img src="images/buttonsfirm.jpg" alt="" /></a>
 										<p>
@@ -121,10 +126,24 @@
 										<h3><a href="#">Note from my manager at J&J</a></h3>
 									</header>
 									<p>
-										I had the pleasure of working with Zohaib at Johnson & Johnson MedTech where he demonstrated significant professional growth. Despite having no prior experience in PCB design, Zohaib quickly learned the proper skills and successfully designed a PCB for our project. Additionally, he ventured into firmware development for the first time, writing and implementing a set of drivers that can be utilized by the team enabling future rapid prototyping, further showcasing his ability to rapidly acquire and apply new skills.
-
-Zohaib is a great networker and communicator, evident in his building of strong relationships within and outside our team. His effective communication facilitates collaboration and teamwork. Overall Zohaib is a quick learner and contributor whose achievements reflect his hard work and dedication. I am confident he will continue to excel and make significant contributions wherever he goes.
+										I had the pleasure of working with Zohaib at Johnson & Johnson MedTech where he demonstrated significant professional growth.
+										Despite having no prior experience in PCB design,
+										Zohaib quickly learned the proper skills and successfully designed a PCB for our project.
+										Additionally, he ventured into firmware development for the first time, writing and implementing a
+										set of drivers that can be utilized by the team enabling future rapid prototyping, f
+										urther showcasing his ability to rapidly acquire and apply new skills.
 									</p>
+									<p>
+										Zohaib is a great networker and communicator, 
+										evident in his building of strong relationships within and outside our team.
+										His effective communication facilitates collaboration and teamwork.
+										Overall Zohaib is a quick learner and contributor whose achievements reflect his hard work and dedication. 
+										I am confident he will continue to excel and make significant contributions wherever he goes.
+									</p>
+									<p>
+										- Evan Carrico (Managed Zohaib at J&J directly)
+										</p>
+										
 									<footer>
 										<a href="https://www.linkedin.com/in/muhammadzohaibali/" class="button" target="_blank">View My LinkedIn Recommendations</a>
 									</footer>
@@ -132,7 +151,7 @@ Zohaib is a great networker and communicator, evident in his building of strong 
 								<hr />
 								<section>
 									<header>
-										<h3><a href="#">Sed lorem etiam consequat</a></h3>
+									<!--	<h3><a href="#">Sed lorem etiam consequat</a></h3>
 									</header>
 									<p>
 										Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
@@ -233,7 +252,7 @@ Zohaib is a great networker and communicator, evident in his building of strong 
 						<div class="row">
 
 							<!-- Tweets -->
-								<section class="col-4 col-12-mobile">
+							<!--	<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
 									</header>
@@ -266,7 +285,7 @@ Zohaib is a great networker and communicator, evident in his building of strong 
 								</section>
 
 							<!-- Posts -->
-								<section class="col-4 col-12-mobile">
+							<!--	<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
 									</header>
@@ -307,7 +326,7 @@ Zohaib is a great networker and communicator, evident in his building of strong 
 								</section>
 
 							<!-- Photos -->
-								<section class="col-4 col-12-mobile">
+								<!--<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
 									</header>
