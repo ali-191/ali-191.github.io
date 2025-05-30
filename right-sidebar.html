@@ -124,10 +124,19 @@
 										</header>
 										<a href="#" class="image featured"><img src="images/buttonsfirm.jpg" alt="" /></a>
 										<p>
-											Project involved use of STM32 nucleo boards and SparkFun buttons to create custom buttons which
-											could be used with surgical tools to enhance their functionality and reduce demo time (which it did to 20%).
+											In this project the teams at J&J wanted a faster demo as a  demo often required the person to hold the tool and then walk back and forth
+											between their computer to show the different functinalities and modes of the tool. In order 
+											to decrease this lost time and make presentation smoother, I had to come up with a way of avoiding the computer interaction. I did
+											so by coming up with the idea to use QWIIC Sparkfun buttons which can be used to switch between modes and reduce time lost. 
+										</p>
+										<p>
+											I implemented this through reading the data sheets of the QWIIC buttons and using its mapped addresses to create
+											my own driver code for STM32 boards specifically. 
+											The use of STM32 nucleo boards and SparkFun buttons was to create custom buttons which
+											could be used with surgical tools to enhance their functionality and reduce demo time by 80%.
 											Involved complete creation of function libraries and a modular code from scratch to enable functionality of the 
 											SparkFun buttons with the STM32 (as they are Arduino based but also to allow customization according to company needs).
+											This code can now be implemented for demonstration of any tool by any team in J&J. 
 										</p>
 									</section>
 								</article>
