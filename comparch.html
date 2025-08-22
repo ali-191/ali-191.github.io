@@ -138,13 +138,14 @@
 
 </section>
 
-			<!-- ADDING FPU UVM CODE BROWSER -->
+<!-- ADDING FPU UVM CODE BROWSER -->
 <div class="wrapper style2">
   <div class="container">
     <article id="uvm" class="special">
       <header>
         <h2><a href="#">FPU UVM Project</a></h2>
         <p>Explore the codebase (<code>Purdue-SoCET/FPU</code>, branch <code>fpuuvm</code>) and my explanation of this UVM project.</p>
+        <a class="button primary" href="https://github.com/Purdue-SoCET/FPU/tree/fpuuvm" target="_blank" rel="noopener">Go to GitHub</a>
       </header>
 
       <!-- Overview and Code Browser -->
@@ -157,7 +158,7 @@
         <!-- Overview -->
         <section id="panel-overview" class="panel">
           <h3>Project Overview</h3>
-          <p class="meta">You can write a description here of your verification project.</p>
+          <p class="meta">Created a UVM testbench for a FPU with testcase coverage spanning accross addition, division, multiplication cases alongside a variety of inputs of numbers from infinity to negative to non-numbers</p>
           <textarea id="overviewEdit" style="width:100%;min-height:150px;" placeholder="Example:
 - UVM env for IEEE-754 FPU
 - Components: driver, monitor, scoreboard
@@ -168,11 +169,11 @@
         <section id="panel-code" class="panel" style="display:none;">
           <h3>Code Explorer</h3>
           <p>Select a file from the repo tree below to view contents:</p>
-          <div style="display:flex; gap:20px;">
+          <div style="display:flex; gap:20px; flex-wrap:wrap;">
             <!-- File tree -->
-            <ul id="fileTree" style="width:300px; max-height:400px; overflow:auto; border:1px solid #ccc; padding:10px;"></ul>
+            <ul id="fileTree" style="width:300px; max-height:400px; overflow:auto; border:1px solid #ccc; padding:10px; font-family: monospace; font-size:14px; color:#222; background:#fafafa;"></ul>
             <!-- Code view -->
-            <pre style="flex:1; border:1px solid #ccc; max-height:400px; overflow:auto; padding:10px; background:#f9f9f9;"><code id="codeView">// Select a file...</code></pre>
+            <pre style="flex:1; border:1px solid #ccc; max-height:400px; overflow:auto; padding:10px; background:#fff; color:#111; font-size:14px;"><code id="codeView">// Select a file...</code></pre>
           </div>
         </section>
       </div>
@@ -186,9 +187,12 @@
   #fpu-browser .tab {
     padding:8px 14px; border:1px solid #ccc; cursor:pointer;
     background:#eee; border-radius:4px 4px 0 0;
+    font-weight:600; color:#222;
   }
-  #fpu-browser .tab.active { background:#fff; border-bottom:1px solid #fff; font-weight:bold; }
-  #fpu-browser .panel { border:1px solid #ccc; border-radius:0 4px 4px 4px; padding:15px; background:#fff; }
+  #fpu-browser .tab.active { background:#fff; border-bottom:1px solid #fff; }
+  #fpu-browser .panel { border:1px solid #ccc; border-radius:0 4px 4px 4px; padding:15px; background:#fff; color:#111; }
+  #fpu-browser h3 { color:#111; }
+  #fpu-browser .meta { color:#444; font-size:14px; }
 </style>
 
 <!-- SCRIPT FOR LOADING GITHUB REPO -->
@@ -236,6 +240,7 @@ async function loadFile(path){
 loadTree();
 </script>
 <!-- END FPU UVM CODE BROWSER -->
+
 
 
 			
