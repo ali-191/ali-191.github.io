@@ -137,7 +137,108 @@
 </style>
 
 </section>
-							
+
+			<!-- ADDING FPU UVM CODE BROWSER -->
+<div class="wrapper style2">
+  <div class="container">
+    <article id="uvm" class="special">
+      <header>
+        <h2><a href="#">FPU UVM Project</a></h2>
+        <p>Explore the codebase (<code>Purdue-SoCET/FPU</code>, branch <code>fpuuvm</code>) and my explanation of this UVM project.</p>
+      </header>
+
+      <!-- Overview and Code Browser -->
+      <div id="fpu-browser">
+        <div class="tabs">
+          <button class="tab active" data-tab="overview">Overview</button>
+          <button class="tab" data-tab="code">Code</button>
+        </div>
+
+        <!-- Overview -->
+        <section id="panel-overview" class="panel">
+          <h3>Project Overview</h3>
+          <p class="meta">You can write a description here of your verification project.</p>
+          <textarea id="overviewEdit" style="width:100%;min-height:150px;" placeholder="Example:
+- UVM env for IEEE-754 FPU
+- Components: driver, monitor, scoreboard
+- Coverage: rounding modes, special cases (NaN/Inf), latency checks"></textarea>
+        </section>
+
+        <!-- Code Explorer -->
+        <section id="panel-code" class="panel" style="display:none;">
+          <h3>Code Explorer</h3>
+          <p>Select a file from the repo tree below to view contents:</p>
+          <div style="display:flex; gap:20px;">
+            <!-- File tree -->
+            <ul id="fileTree" style="width:300px; max-height:400px; overflow:auto; border:1px solid #ccc; padding:10px;"></ul>
+            <!-- Code view -->
+            <pre style="flex:1; border:1px solid #ccc; max-height:400px; overflow:auto; padding:10px; background:#f9f9f9;"><code id="codeView">// Select a file...</code></pre>
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
+</div>
+
+<!-- STYLES FOR FPU BROWSER -->
+<style>
+  #fpu-browser .tabs { display:flex; gap:10px; margin-bottom:10px; }
+  #fpu-browser .tab {
+    padding:8px 14px; border:1px solid #ccc; cursor:pointer;
+    background:#eee; border-radius:4px 4px 0 0;
+  }
+  #fpu-browser .tab.active { background:#fff; border-bottom:1px solid #fff; font-weight:bold; }
+  #fpu-browser .panel { border:1px solid #ccc; border-radius:0 4px 4px 4px; padding:15px; background:#fff; }
+</style>
+
+<!-- SCRIPT FOR LOADING GITHUB REPO -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+const OWNER = "Purdue-SoCET", REPO="FPU", BRANCH="fpuuvm";
+
+// Tabs
+document.querySelectorAll("#fpu-browser .tab").forEach(tab=>{
+  tab.onclick=()=>{
+    document.querySelectorAll("#fpu-browser .tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll("#fpu-browser .panel").forEach(p=>p.style.display="none");
+    tab.classList.add("active");
+    document.querySelector("#panel-"+tab.dataset.tab).style.display="block";
+  };
+});
+
+// Fetch repo tree
+async function loadTree(){
+  const url=`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`;
+  const res=await fetch(url);
+  const data=await res.json();
+  const tree=data.tree.filter(t=>t.type==="blob");
+  const ul=document.getElementById("fileTree");
+  ul.innerHTML="";
+  tree.forEach(f=>{
+    const li=document.createElement("li");
+    li.textContent=f.path;
+    li.style.cursor="pointer";
+    li.onclick=()=>loadFile(f.path);
+    ul.appendChild(li);
+  });
+}
+
+// Fetch and show file
+async function loadFile(path){
+  const url=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${path}`;
+  const res=await fetch(url);
+  const txt=await res.text();
+  const code=document.getElementById("codeView");
+  code.textContent=txt;
+  hljs.highlightElement(code);
+}
+
+loadTree();
+</script>
+<!-- END FPU UVM CODE BROWSER -->
+
+
+			
 							<!--	<p>
 									Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
 									orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
