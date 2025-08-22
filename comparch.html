@@ -33,9 +33,9 @@
 									<a href="#">Projects</a>
 									<ul>
 										<li>
-											<a href="left-sidebar.html">J&J &hellip;</a>
+											<a href="right-sidebar">J&J &hellip;</a>
 											<ul>
-												<li><a href="#">PCB project</a></li>
+												<li><a href="right-sidebar">PCB project</a></li>
 												<li><a href="#">Firmware project</a></li>
 												<li><a href="#">Intern Comittee Work</a></li>
 											</ul>
@@ -51,12 +51,13 @@
 											</ul>
 										</li>
 										<li>
-											<a href="right-sidebar.html">Comp Arch and ASIC Projects&hellip;</a>
+											<a href="comparch.html">Comp Arch and ASIC Projects&hellip;</a>
 											<ul>
 												<li><a href="#">RISC-V Single core processor</a></li>
 												<li><a href="#">RISC-V Dual core processor</a></li>
-												<li><a href="#">USB 1.1 ASIC design projectr</a></li>
+												<li><a href="#">RISC-V OOO processor</a></li>
 												<li><a href="#">Vortext SIMT parametrization</a></li>
+												<li><a href="#">FPU UVM</a></li>
 											</ul>
 										</li>
 									</ul>
@@ -69,34 +70,84 @@
 
 				</div>
 			<!-- Main -->
-				<div class="wrapper style1">
+			<div class="wrapper style1">
+  <div class="container">
+    <article id="main" class="special">
+      <header>
+        <h2><a href="#">Single and Dual Core processor with Cache coherence and lrsc</a></h2>
+        <p>
+          Role: Team Captain for SPARK Challenge (project competition at Purdue)
+        </p>
+      </header>
 
-					<div class="container">
-						<article id="main" class="special">
-							<header>
-								<h2><a href="#">Single and Dual Core processor with Cache coherence and lrsc</a></h2>
-								<p>
-									Role: Team Captain for SPARK Challenge (project competition at Purdue)
-								</p>
-							</header>
-							<video width="1500" height="360" controls>
-  <source src="Who Wants to be a Millionaire STM32 initial video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-							<p>
-								Created a project 
-							</p>
-							<section>
-								<header>
-									<h3>Embedded system concepts applied in this project</h3>
-								</header>
-							<ul>
-  <li>PWM for the timer to work</li>
-  <li>Interrupts for the Keypad</li>
-  <li>SPI for the display on the TFTs</li>
-  <li>UART for the communication between the two STM32s to allow live update of score</li>
-  <li>Timers for the Question time</li>
-</ul>
+      <video width="1500" height="360" controls>
+        <source src="Who Wants to be a Millionaire STM32 initial video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <p>
+        Created a project
+      </p>
+
+      <section>
+        <header>
+          <h3>Embedded system concepts applied in this project</h3>
+        </header>
+        <ul>
+          <li>PWM for the timer to work</li>
+          <li>Interrupts for the Keypad</li>
+          <li>SPI for the display on the TFTs</li>
+          <li>UART for the communication between the two STM32s to allow live update of score</li>
+          <li>Timers for the Question time</li>
+        </ul>
+      </section>
+
+      <!-- PDF embed starts here -->
+      <section>
+        <header>
+          <h3>Project Report (PDF)</h3>
+        </header>
+
+        <div class="pdf-wrap">
+          <object
+            data="RISC-V Processors Comparison Report.pdf#page=1&zoom=fitH&view=FitH&toolbar=1"
+            type="application/pdf"
+            width="100%"
+            height="100%">
+            <p>
+              Your browser can’t display PDFs inline.
+              <a href="RISC-V Processors Comparison Report.pdf" target="_blank" rel="noopener">Open the PDF</a>
+              or
+              <a href="RISC-V Processors Comparison Report.pdf" download>download it</a>.
+            </p>
+          </object>
+        </div>
+      </section>
+      <!-- PDF embed ends here -->
+
+    </article>
+  </div>
+</div>
+
+<style>
+  .pdf-wrap {
+    position: relative;
+    width: 100%;
+    height: 80vh;      
+    max-height: 1000px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #f9f9f9;
+  }
+  .pdf-wrap object {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+
 </section>
 								<header>
 								<h2><a href="#">PART (Purdue Aerial Robotics Team)</a></h2>
